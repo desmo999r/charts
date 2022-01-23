@@ -26,6 +26,10 @@ spec:
         {{- include "common.labels.selectorLabels" . | nindent 8 }}
       annotations: {{ include "common.annotations" . | nindent 8 }}
     spec:
+      securityContext:
+        # uid=473(minio) gid=473(minio)
+        runAsUser: 473
+        runAsGroup: 473
       serviceAccountName: {{ include "common.names.serviceAccountName" . | quote }}
       hostNetwork: {{ include "minio.hostNetworking" . }}
       containers:
