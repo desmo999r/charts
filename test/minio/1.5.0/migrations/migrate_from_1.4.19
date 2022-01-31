@@ -1,0 +1,92 @@
+#!/usr/bin/python3
+import json
+import os
+import sys
+import subprocess
+from pathlib import Path
+
+from middlewared.client import Client
+from middlewared.service import ValidationErrors, CallError
+
+
+def path_in_locked_datasets(path: str):
+    with Client() as c:
+        return c.call('pool.dataset.path_in_locked_datasets', path)
+
+
+def validate_host_path(path: str, verrors: ValidationErrors):
+    """
+    These validations are taken from `FilesystemService._common_perm_path_validate`.
+    Including an additional validation that makes sure all the children under
+    a path are on same device.
+    """
+    is_cluster = path.startswith("CLUSTER:")
+    if is_cluster:
+        verrors.add("filesystem.chown", f"Path should not start with 'CLUSTER:' {path}")
+
+    p = Path(path)
+    if not p.is_absolute():
+        verrors.add("filesystem.chown", f"Must be an absolute path: {path}")
+
+    if p.is_file():
+        verrors.add("filesystem.chown", f"Recursive operations on a file are invalid: {path}")
+
+    if os.path.realpath(path).startswith("/root/.ssh"):
+        verrors.add("filesystem.chown", f"Changes to permissions under /root/.ssh are not permitted: {path}")
+
+    if not os.path.realpath(path).startswith("/mnt/"):
+        verrors.add(
+            "filesystem.chown",
+            f"Changes to permissions on paths that are not beneath the directory /mnt are not permitted: {path}"
+        )
+
+    elif len(p.resolve().parents) == 2:
+        verrors.add("filesystem.chown", f"The specified path is a ZFS pool mountpoint: {path}")
+
+    # Make sure that dataset is not locked
+    if path_in_locked_datasets(path):
+        verrors.add("filesystem.chown", f"Dataset is locked at path: {path}.")
+
+    # Make sure all the minio's data directory children are on same device.
+    device_id = os.stat(path).st_dev
+    for root, dirs, files in os.walk(path):
+        for child in dirs + files:
+            abs_path = os.path.join(root, child)
+            if os.stat(abs_path).st_dev != device_id:
+                verrors.add(
+                    "filesystem.chown",
+                    (f"All the children of MinIO data directory should be on "
+                     f"same device as root: path={abs_path} device={os.stat(abs_path).st_dev}")
+                )
+                break
+
+
+def migrate(values):
+    # minio user / group ID
+    uid = gid = 473
+    verrors = ValidationErrors()
+    host_path = values['appVolumeMounts']['export']['hostPath']
+    validate_host_path(host_path, verrors)
+    verrors.check()
+    # chown the host path
+    acltool = subprocess.run([
+        "/usr/bin/nfs4xdr_winacl",
+        "-a", "chown",
+        "-O", str(uid), "-G", str(gid),
+        "-r",
+        "-c", host_path,
+        "-p", host_path], check=False, capture_output=True
+    )
+    if acltool.returncode != 0:
+        raise CallError(f"acltool [chown] on path {host_path} failed with error: [{acltool.stderr.decode().strip()}]")
+
+    return values
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        exit(1)
+
+    if os.path.exists(sys.argv[1]):
+        with open(sys.argv[1], "r") as f:
+            print(json.dumps(migrate(json.loads(f.read()))))
