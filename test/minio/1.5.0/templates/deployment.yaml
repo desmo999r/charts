@@ -9,7 +9,6 @@ metadata:
     heritage: {{ .Release.Service }}
   annotations:
     rollme: {{ randAlphaNum 5 | quote }}
-    "helm.sh/hook": pre-install
 spec:
   replicas: {{ (default 1 .Values.replicas) }}
   strategy:

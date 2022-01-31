@@ -22,6 +22,6 @@ spec:
       containers:
       - name: pre-install-job
         image: "alpine:latest"
-        command: ["chown", "-R", "473:473", "{{ .Values.appVolumeMounts.export.mountPath }}"]
+        command: ["chown", "-R", "{{ .Values.runAsUser }}:{{ .Values.runAsGroup }}", "{{ .Values.appVolumeMounts.export.mountPath }}"]
         volumeMounts: {{ include "common.storage.configureAppVolumeMountsInContainer" .Values | nindent 12 }}
       volumes: {{ include "common.storage.configureAppVolumes" .Values | nindent 8 }}
