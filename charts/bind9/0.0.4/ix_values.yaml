@@ -23,9 +23,11 @@ service:
         port: 53
         nodePort: 53
   bind-tcp:
+    enabled: true
     type: Simple
     ports:
       bind-tcp:
+        enabled: true
         port: 53
         nodePort: 53
 
