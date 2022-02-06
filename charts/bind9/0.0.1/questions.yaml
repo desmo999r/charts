@@ -6,7 +6,7 @@ groups:
 
 questions:
 
-  - variable: appVolumeMounts
+  - variable: persistence
     label: "Bind9 Configuration"
     group: "Storage"
     schema:
@@ -28,14 +28,6 @@ questions:
                   show_if: [["hostPathEnabled", "=", false]]
                   default: "ix-minio"
                   editable: false
-              - variable: mountPath
-                label: "Bind9 Configuration Mount Path"
-                description: "Path where the volume will be mounted inside the pod"
-                schema:
-                  type: path
-                  hidden: true
-                  editable: false
-                  default: "/export"
               - variable: hostPathEnabled
                 label: "Enable Host Path for Bind9 Configuration Volume"
                 schema:
