@@ -16,20 +16,16 @@ env:
 
 service:
   main:
-    enabled: true
-    type: NodePort
+    type: Simple
     ports:
       main:
-        enabled: true
         protocol: UDP
         port: 53
         nodePort: 53
   tcp:
-    enabled: true
-    type: NodePort
+    type: Simple
     ports:
       tcp:
-        enabled: true
         port: 53
         nodePort: 53
 
