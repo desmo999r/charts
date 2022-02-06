@@ -22,4 +22,4 @@ version: 0.0.1
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
 appVersion: "9.18"
-url: https://www.isc.org/images/isclogos/Bind_9_ISC_Blue.jpg
+icon: https://gitlab.isc.org/uploads/-/system/project/avatar/1/Bind_9_Mark_ISC_Blue.png
