@@ -22,10 +22,10 @@ service:
         protocol: UDP
         port: 53
         nodePort: 53
-  tcp:
+  bind-tcp:
     type: Simple
     ports:
-      tcp:
+      bind-tcp:
         port: 53
         nodePort: 53
 
