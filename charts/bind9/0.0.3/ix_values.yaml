@@ -24,11 +24,11 @@ service:
         protocol: UDP
         port: 53
         nodePort: 53
-  dnsTcp:
+  tcp:
     enabled: true
     type: NodePort
     ports:
-      dnsTcp:
+      tcp:
         enabled: true
         port: 53
         nodePort: 53
