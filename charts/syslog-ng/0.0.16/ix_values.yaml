@@ -3,6 +3,11 @@ image:
   pullPolicy: IfNotPresent
   tag: v3.30.1
 
+logrotateImage:
+  repository: docker.io/blacklabelops/logrotate
+  pullPolicy: IfNotPresent
+  tag: 1.3
+
 securityContext:
   runAsNonRoot: false
   readOnlyRootFilesystem: false
@@ -42,3 +47,25 @@ persistence:
   config:
     enabled: true
     mountPath: "/config"
+  logs:
+    enabled: true
+    mountPath: "/var/log"
+
+additionalContainers:
+  logrotate:
+    name: logrotate
+    image: "{{ .Values.logrotateImage.repository }}:{{ .Values.logrotateImage.tag }}"
+    env:
+      - name: LOGS_DIRECTORIES
+        value: "{{ .Values.persistence.logs.mountPath }}"
+      - name: LOGROTATE_INTERVAL
+        value: "daily"
+      - name: LOGROTATE_POSTROTATE_COMMAND
+        value: "killall -HUP syslog-ng"
+      - name: LOGROTATE_SIZE
+        value: "10M"
+      - name: LOGROTATE_COMPRESSION
+        value: "compress"
+    volumeMounts:
+      - name: logs
+        mountPath: "/var/log"
