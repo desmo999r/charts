@@ -16,25 +16,20 @@ env:
 
 service:
   main:
-    enabled: false
-    ports:
-      main:
-        enabled: false
-  bind9-tcp:
     enabled: true
-    ports:
-      bind9-tcp:
-        type: NodePort
-        enabled: true
-        port: 53
-        nodePort: 53
-  bind9-udp:
-    enabled: true
+    type: NodePort
     ports:
       bind9-udp:
-        type: NodePort
         enabled: true
         protocol: UDP
+        port: 53
+        nodePort: 53
+  tcp:
+    enabled: true
+    type: NodePort
+    ports:
+      bind9-tcp:
+        enabled: true
         port: 53
         nodePort: 53
 
