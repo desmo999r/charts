@@ -12,9 +12,14 @@ podSecurityContext:
   runAsGroup: 0
 
 env:
-  PUID: 569
+  PUID: 568
 
 service:
+  main:
+    enabled: false
+    ports:
+      main:
+        enabled: false
   bind9-tcp:
     enabled: true
     ports:
@@ -35,3 +40,5 @@ persistence:
   config:
     enabled: true
     mountPath: "/etc/bind"
+  varrun:
+    enabled: true
