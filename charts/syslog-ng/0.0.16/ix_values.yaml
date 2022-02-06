@@ -1,3 +1,5 @@
+shareProcessNamespace: true
+
 image:
   repository: tccr.io/truecharts/syslog-ng
   pullPolicy: IfNotPresent
