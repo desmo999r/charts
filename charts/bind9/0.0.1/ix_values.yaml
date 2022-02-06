@@ -1,7 +1,7 @@
 image:
   pullPolicy: IfNotPresent
   repository: docker.io/internetsystemsconsortium/bind9
-  tag: 9.16
+  tag: 9.18
 
 securityContext:
   runAsNonRoot: false
