@@ -24,16 +24,18 @@ service:
     enabled: true
     ports:
       bind9-tcp:
+        type: NodePort
         enabled: true
-        tartgetPort: 53
+        port: 53
         nodePort: 53
   bind9-udp:
     enabled: true
     ports:
       bind9-udp:
+        type: NodePort
         enabled: true
         protocol: UDP
-        tartgetPort: 53
+        port: 53
         nodePort: 53
 
 persistence:
