@@ -19,16 +19,16 @@ service:
     enabled: true
     type: NodePort
     ports:
-      bind9-udp:
+      main:
         enabled: true
         protocol: UDP
         port: 53
         nodePort: 53
-  tcp:
+  dnsTcp:
     enabled: true
     type: NodePort
     ports:
-      bind9-tcp:
+      dnsTcp:
         enabled: true
         port: 53
         nodePort: 53
