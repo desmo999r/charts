@@ -25,6 +25,7 @@ service:
     ports:
       bind9-tcp:
         enabled: true
+        type: NodePort
         tartgetPort: 53
         port: 53
   bind9-udp:
@@ -33,6 +34,7 @@ service:
       bind9-udp:
         enabled: true
         protocol: UDP
+        type: NodePort
         tartgetPort: 53
         port: 53
 
