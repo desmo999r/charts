@@ -17,7 +17,7 @@ additionalContainers:
       - name: LOGROTATE_SIZE
         value: "{{ .Values.logrotate.size }}"
       - name: LOGROTATE_COMPRESSION
-        value: "{{ ternary "compress" "nocompress" .values.logrotate.compress }}"
+        value: "{{ ternary "compress" "nocompress" .Values.logrotate.compress }}"
       - name: LOGROTATE_DELAYCOMPRESS
         value: "{{ .values.logrotate.delayCompress }}"
     volumeMounts:
