@@ -2856,13 +2856,13 @@ questions:
                 schema:
                   type: boolean
                   default: false
-              - variable: delay-compress
+              - variable: delayCompress
                 label: "do not compress the last rotated file"
                 show_if: [["compress", "=", "true"]]
                 schema:
                   type: boolean
                   default: true
-              - variable: postrotate-command
+              - variable: postRotateCommand
                 label: "Postrotate command to run"
                 schema:
                   type: string
