@@ -2836,26 +2836,35 @@ questions:
             subquestions:
               - variable: copies
                 label: "Number of rotated files to keep"
-                type: string
-                default: "20"
+                schema:
+                  type: string
+                  default: "20"
+                  required: true
               - variable: interval
                 label: "Logrotate interval (@daily, @weekly, ...)"
-                type: string
-                default: "@daily"
+                schema:
+                  type: string
+                  default: "@daily"
               - variable: size
                 label: "File size to trigger Logrotate"
-                type: string
-                default: "10M"
+                schema:
+                  type: string
+                  default: "10M"
+                  required: true
               - variable: compress
                 label: "Compress the rotated files"
-                type: boolean
-                default: false
+                schema:
+                  type: boolean
+                  default: false
               - variable: delay-compress
                 label: "do not compress the last rotated file"
                 show_if: [["compress", "=", "true"]]
-                type: boolean
-                default: true
+                schema:
+                  type: boolean
+                  default: true
               - variable: postrotate-command
                 label: "Postrotate command to run"
-                type: string
-                default: "killall -HUP syslog-ng"
+                schema:
+                  type: string
+                  default: "killall -HUP syslog-ng"
+                  required: true
