@@ -25,6 +25,8 @@ groups:
     description: "Addon Configuration"
   - name: "Advanced"
     description: "Advanced Configuration"
+  - name: "Logrotate"
+    description: "Enable and configure Logrotate"
 portals:
   web_portal:
     protocols:
@@ -2817,3 +2819,43 @@ questions:
                                   schema:
                                     type: string
                                     required: true
+
+  - variable: logrotate
+    group: "Logrotate"
+    label: ""
+    schema:
+      additional_attrs: true
+      type: dict
+      attrs:
+        - variable: enabled
+          label: "enabled"
+          schema:
+            type: boolean
+            default: false
+            show_subquestions_if: true
+            subquestions:
+              - variable: copies
+                label: "Number of rotated files to keep"
+                type: string
+                default: "20"
+              - variable: interval
+                label: "Logrotate interval (@daily, @weekly, ...)"
+                type: string
+                default: "@daily"
+              - variable: size
+                label: "File size to trigger Logrotate"
+                type: string
+                default: "10M"
+              - variable: compress
+                label: "Compress the rotated files"
+                type: boolean
+                default: false
+              - variable: delay-compress
+                label: "do not compress the last rotated file"
+                show_if: [["compress", "=", "true"]]
+                type: boolean
+                default: true
+              - variable: postrotate-command
+                label: "Postrotate command to run"
+                type: string
+                default: "killall -HUP syslog-ng"
