@@ -53,31 +53,3 @@ persistence:
     enabled: true
     mountPath: "/var/log"
 
-{{- define "syslogng.additionalContainers" -}}
-{{- if .Values.logrotate.enabled -}}
-additionalContainers:
-  logrotate:
-    name: logrotate
-    image: "{{ .Values.logrotateImage.repository }}:{{ .Values.logrotateImage.tag }}"
-    env:
-      - name: LOGS_DIRECTORIES
-        value: "{{ .Values.persistence.logs.mountPath }}"
-      - name: LOGROTATE_INTERVAL
-        value: "{{ .Values.logrotate.interval }}"
-      - name: LOGROTATE_COPIES
-        value: "{{ .Values.logrotate.copies }}"
-      - name: LOGROTATE_POSTROTATE_COMMAND
-        value: "{{ .Values.logrotate.postRotateCommand }}"
-      - name: LOGROTATE_SIZE
-        value: "{{ .Values.logrotate.size }}"
-      - name: LOGROTATE_COMPRESSION
-        value: "{{ ternary "compress" "nocompress" .Values.logrotate.compress }}"
-      - name: LOGROTATE_DELAYCOMPRESS
-        value: "{{ .Values.logrotate.delayCompress }}"
-    volumeMounts:
-      - name: logs
-        mountPath: "/var/log"
-{{- end -}}
-{{- end -}}
-
-{{- include "syslogng.additionalContainers" . }}
