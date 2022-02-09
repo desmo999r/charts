@@ -23,10 +23,10 @@ groups:
     description: "Metrics"
   - name: "Addons"
     description: "Addon Configuration"
-  - name: "Advanced"
-    description: "Advanced Configuration"
   - name: "Logrotate"
     description: "Enable and configure Logrotate"
+  - name: "Advanced"
+    description: "Advanced Configuration"
 portals:
   web_portal:
     protocols:

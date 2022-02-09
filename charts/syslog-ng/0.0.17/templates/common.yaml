@@ -19,7 +19,7 @@ additionalContainers:
       - name: LOGROTATE_COMPRESSION
         value: "{{ ternary "compress" "nocompress" .Values.logrotate.compress }}"
       - name: LOGROTATE_DELAYCOMPRESS
-        value: "{{ .values.logrotate.delayCompress }}"
+        value: "{{ .Values.logrotate.delayCompress }}"
     volumeMounts:
       - name: logs
         mountPath: "/var/log"
