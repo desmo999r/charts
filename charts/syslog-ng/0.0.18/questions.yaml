@@ -2841,10 +2841,10 @@ questions:
                   default: "20"
                   required: true
               - variable: interval
-                label: "Logrotate interval (@daily, @weekly, ...)"
+                label: "Logrotate interval (daily, weekly, ...)"
                 schema:
                   type: string
-                  default: "@daily"
+                  default: "daily"
               - variable: size
                 label: "File size to trigger Logrotate"
                 schema:
