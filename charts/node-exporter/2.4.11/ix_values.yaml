@@ -115,6 +115,13 @@ securityContext:
 ## Node Exporter Service
 ##
 service:
+  main:
+    type: Simple
+    ports:
+      main:
+        protocol: UDP
+        port: 9100
+        nodePort: 9100
   ## @param service.type Kubernetes service type
   ##
   type: ClusterIP
