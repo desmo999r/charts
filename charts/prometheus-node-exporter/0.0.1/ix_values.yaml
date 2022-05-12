@@ -1,7 +1,0 @@
-service:
-  main:
-    type: Simple
-    ports:
-      main:
-        port: 9100
-        nodePort: 9100
