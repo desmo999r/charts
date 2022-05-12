@@ -1,0 +1,16 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: docker.io/bitnami/node-exporter
+  tag: 1.3.1
+
+securityContext:
+  runAsNonRoot: true
+  readOnlyRootFilesystem: true
+
+service:
+  main:
+    type: Simple
+    ports:
+      main:
+        port: 9100
+        nodePort: 9100
