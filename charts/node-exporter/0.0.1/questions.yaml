@@ -16,6 +16,7 @@ questions:
           label: "Image repository"
           schema:
             type: string
+            default: "docker.io/bitnami/node-exporter"
             required: true
         - variable: tag
           description: "Tag to use for specified image"
