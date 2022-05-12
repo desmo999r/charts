@@ -1,5 +1,5 @@
 apiVersion: v2
-name: node-exporter
+name: prometheus-node-exporter
 description: Prometheus exporter for hardware and OS metrics exposed by UNIX kernels, with pluggable metric collectors.
 
 # A chart can be either an 'application' or a 'library' chart.
