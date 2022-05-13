@@ -24,21 +24,21 @@ extraArgs:
 
 
 persistence:
-  rootfs:
-    enabled: true
-    mountPath: "/host/rootfs"
-    readOnly: true
-    type: "hostPath"
-    path: "/"
   sys:
     enabled: true
     mountPath: "/host/sys"
     readOnly: true
     type: "hostPath"
-    path: "/sys"
+    hostPath: "/sys"
   proc:
     enabled: true
     mountPath: "/host/proc"
     readOnly: true
     type: "hostPath"
-    path: "/proc"
+    hostPath: "/proc"
+  rootfs:
+    enabled: true
+    mountPath: "/host/rootfs"
+    readOnly: true
+    type: "hostPath"
+    hostPath: "/"
