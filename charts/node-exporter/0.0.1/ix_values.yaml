@@ -11,6 +11,7 @@ hostNetwork: true
 
 service:
   main:
+    enabled: false
     type: Simple
     ports:
       main:
