@@ -1,6 +1,6 @@
 image:
   pullPolicy: IfNotPresent
-  repository: docker.io/bitnami/node-exporter
+  repository: quay.io/prometheus/node-exporter
   tag: 1.3.1
 
 securityContext:
@@ -14,3 +14,25 @@ service:
       main:
         port: 9100
         nodePort: 9100
+
+extraArgs:
+  - --path.procfs=/host/proc
+  - --path.sysfs=/host/sys
+  - --path.rootfs=/host/root
+  - --collector.filesystem.mount-points-exclude=^/(dev|proc|sys|var/lib/docker/.+|var/lib/kubelet/.+)($|/)
+  - --collector.filesystem.fs-types-exclude=^(autofs|binfmt_misc|bpf|cgroup2?|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|iso9660|mqueue|nsfs|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|selinuxfs|squashfs|sysfs|tracefs)$
+
+
+persistence:
+  rootfs:
+    enabled: true
+    mountPath: "/host/rootfs"
+    readOnly: true
+  sys:
+    enabled: true
+    mountPath: "/host/sys"
+    readOnly: true
+  proc:
+    enabled: true
+    mountPath: "/host/proc"
+    readOnly: true
