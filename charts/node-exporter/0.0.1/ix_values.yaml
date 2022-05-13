@@ -7,6 +7,8 @@ securityContext:
   runAsNonRoot: true
   readOnlyRootFilesystem: true
 
+hostNetwork: true
+
 service:
   main:
     type: Simple
