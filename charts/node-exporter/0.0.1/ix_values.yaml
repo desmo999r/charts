@@ -28,13 +28,17 @@ persistence:
     enabled: true
     mountPath: "/host/rootfs"
     readOnly: true
-    type: HostPath
+    type: "hostPath"
     path: "/"
   sys:
     enabled: true
     mountPath: "/host/sys"
     readOnly: true
+    type: "hostPath"
+    path: "/sys"
   proc:
     enabled: true
     mountPath: "/host/proc"
     readOnly: true
+    type: "hostPath"
+    path: "/proc"
