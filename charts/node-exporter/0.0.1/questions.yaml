@@ -124,14 +124,14 @@ questions:
           label: "Image repository"
           schema:
             type: string
-            default: "docker.io/bitnami/node-exporter"
+            default: "quay.io/prometheus/node-exporter"
             required: true
         - variable: tag
           description: "Tag to use for specified image"
           label: "Image Tag"
           schema:
             type: string
-            default: "latest"
+            default: "v1.3.1"
         - variable: pullPolicy
           description: "Docker Image Pull Policy"
           label: "Image Pull Policy"
