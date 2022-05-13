@@ -16,7 +16,7 @@ questions:
           schema:
             type: dict
             attrs:
-              - variable: type:
+              - variable: type
                 label: "Type of Storage"
                 description: "Sets the persistence type, Anything other than PVC could break rollback!"
                 schema:
@@ -49,7 +49,7 @@ questions:
           schema:
             type: dict
             attrs:
-              - variable: type:
+              - variable: type
                 label: "Type of Storage"
                 description: "Sets the persistence type, Anything other than PVC could break rollback!"
                 schema:
@@ -82,7 +82,7 @@ questions:
           schema:
             type: dict
             attrs:
-              - variable: type:
+              - variable: type
                 label: "Type of Storage"
                 description: "Sets the persistence type, Anything other than PVC could break rollback!"
                 schema:
