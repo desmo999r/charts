@@ -28,6 +28,8 @@ persistence:
     enabled: true
     mountPath: "/host/rootfs"
     readOnly: true
+    type: HostPath
+    path: "/"
   sys:
     enabled: true
     mountPath: "/host/sys"
