@@ -30,4 +30,3 @@ service:
         enabled: true
         protocol: UDP
         port: 2003
-        nodePort: 9109
