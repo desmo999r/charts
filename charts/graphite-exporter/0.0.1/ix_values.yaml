@@ -30,3 +30,15 @@ service:
         protocol: UDP
         port: 2003
         targetPort: 9109
+
+persistence:
+  varrun:
+    enabled: true
+  mapping-config:
+    enabled: true
+    type: hostPath
+    mountPath: "/tmp/mapping-config.conf"
+    readOnly: true
+
+extraArgs:
+  - --graphite.mapping-config=/tmp/mapping-config.conf
