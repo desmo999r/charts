@@ -9,22 +9,25 @@ securityContext:
 
 service:
   main:
+    type: Simple
     ports:
       main:
         port: 9108
         nodePort: 9108
   graphite-tcp:
     enabled: true
-    type: Simple
+    type: NodePort
     ports:
       graphite-tcp:
         enabled: true
         port: 2003
+        nodePort: 9109
   graphite-udp:
     enabled: true
-    type: Simple
+    type: NodePort
     ports:
       graphite-udp:
         enabled: true
         protocol: UDP
         port: 2003
+        nodePort: 9109
