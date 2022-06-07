@@ -54,12 +54,6 @@ questions:
             additional_attrs: true
             type: dict
             attrs:
-              - variable: mountPath
-                label: "Mount Path in Pod"
-                description: "Path where the volume will be mounted inside the pod"
-                schema:
-                  type: path
-                  required: true
               - variable: hostPath
                 label: "Host Path"
                 description: "Host path"
