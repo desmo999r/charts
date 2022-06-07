@@ -9,11 +9,13 @@ securityContext:
 
 service:
   main:
+    type: Simple
     ports:
       main:
         port: 9108
   graphite-tcp:
     enabled: true
+    type: Simple
     ports:
       graphite-tcp:
         enabled: true
@@ -21,6 +23,7 @@ service:
         targetPort: 9109
   graphite-udp:
     enabled: true
+    type: Simple
     ports:
       graphite-udp:
         enabled: true
