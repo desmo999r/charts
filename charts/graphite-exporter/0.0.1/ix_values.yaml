@@ -25,6 +25,6 @@ service:
     ports:
       graphite-udp:
         enabled: true
-        protocol: udp
+        protocol: UDP
         port: 9109
         nodePort: 2003
