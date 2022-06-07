@@ -38,6 +38,7 @@ persistence:
     enabled: true
     type: hostPath
     mountPath: "/tmp/mapping-config.conf"
+    hostPath: "/usr/local/mapping-config.conf"
     readOnly: true
 
 extraArgs:
