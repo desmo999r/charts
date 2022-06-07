@@ -15,18 +15,16 @@ service:
         nodePort: 9108
   graphite-tcp:
     enabled: true
-    type: NodePort
+    type: Simple
     ports:
       graphite-tcp:
         enabled: true
-        port: 9109
-        nodePort: 2003
+        port: 2003
   graphite-udp:
     enabled: true
-    type: NodePort
+    type: Simple
     ports:
       graphite-udp:
         enabled: true
         protocol: UDP
-        port: 9109
-        nodePort: 2003
+        port: 2003
