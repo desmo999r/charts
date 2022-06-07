@@ -1,0 +1,29 @@
+image:
+  pullPolicy: IfNotPresent
+  repository: quay.io/prometheus/graphite-exporter
+  tag: v0.12.1
+
+securityContext:
+  runAsNonRoot: true
+  readOnlyRootFilesystem: true
+
+service:
+  main:
+    type: Simple
+    ports:
+      main:
+        port: 9108
+        nodePort: 9108
+  graphite-tcp:
+    type: Simple
+    ports:
+      graphite-tcp:
+        port: 9109
+        nodePort: 2003
+  graphite-udp:
+    type: Simple
+    ports:
+      graphite-udp:
+        protocol: udp
+        port: 9109
+        nodePort: 2003
