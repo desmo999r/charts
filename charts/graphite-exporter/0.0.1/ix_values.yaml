@@ -3,10 +3,8 @@ image:
   repository: quay.io/prometheus/graphite-exporter
   tag: v0.12.1
 
-hostNetwork: true
-
 securityContext:
-  runAsNonRoot: true
+  runAsNonRoot: false
   readOnlyRootFilesystem: true
 
 service:
@@ -17,6 +15,7 @@ service:
         nodePort: 9108
   graphite-tcp:
     enabled: true
+    type: Simple
     ports:
       graphite-tcp:
         enabled: true
@@ -24,6 +23,7 @@ service:
         nodePort: 2003
   graphite-udp:
     enabled: true
+    type: Simple
     ports:
       graphite-udp:
         enabled: true
