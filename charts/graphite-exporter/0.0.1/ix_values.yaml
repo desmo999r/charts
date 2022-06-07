@@ -15,7 +15,7 @@ service:
         nodePort: 9108
   graphite-tcp:
     enabled: true
-    type: Simple
+    type: NodePort
     ports:
       graphite-tcp:
         enabled: true
@@ -23,7 +23,7 @@ service:
         nodePort: 2003
   graphite-udp:
     enabled: true
-    type: Simple
+    type: NodePort
     ports:
       graphite-udp:
         enabled: true
