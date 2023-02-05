@@ -1,7 +1,7 @@
 image:
   pullPolicy: IfNotPresent
   repository: quay.io/prometheus/graphite-exporter
-  tag: v0.12.1
+  tag: v0.13.1
 
 securityContext:
   runAsNonRoot: false
