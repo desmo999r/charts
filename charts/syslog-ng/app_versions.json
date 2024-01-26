@@ -18,7 +18,8 @@
 			"hostMounts": []
 		},
 		"schema": {
-			"groups": []
+			"groups": [],
+			"questions": []
 		}
 	}
 }
