@@ -2,6 +2,7 @@ shareProcessNamespace: true
 
 logrotate:
   enabled: true
+  compress: true
 
 image:
   repository: quay.io/truecharts/syslog-ng
