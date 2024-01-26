@@ -2,6 +2,20 @@
 	"2401.0.1": {
 		"healthy": true,
 		"healthy_error": null,
-		"version": "2401.0.1"
+		"version": "2401.0.1",
+		"supported": true,
+		"location": "/__w/charts/charts/charts/syslog-ng/2401.0.1",
+		"required_features": [],
+		"human_version": "v1_2401.0.1",
+		"version": "2401.0.1",
+		"chart_metadata": {
+			"name": "syslog-ng"
+		},
+		"app_metadata": {
+			"runAsContext": [],
+			"capabilities": [],
+			"hostMounts": []
+		},
+		"schema": {}
 	}
 }
