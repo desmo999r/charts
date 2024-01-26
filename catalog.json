@@ -9,6 +9,7 @@
 			"name": "Bind9",
 			"healthy": true,
 			"healthy_error": null,
+			"home": "https://www.isc.org",
 			"latest_version": "2401.0.1",
 			"latest_app_version": "v1",
 			"latest_human_version": "v1_2401.0.1",
