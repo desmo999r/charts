@@ -3,7 +3,7 @@
 		"bind9": {
 			"app_readme": "<h1>Bind 9</h1>",
 			"categories": [
-				"incubator",
+				"incubator"
 			],
 			"description": "Bind 9 name server",
 			"name": "Bind9",
