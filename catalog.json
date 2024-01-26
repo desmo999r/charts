@@ -22,6 +22,14 @@
 					"email": "jandre@desmojim.fr"
 				}
 			],
+			"tags": [
+				"dns",
+				"network"
+			],
+			"screenshots": [],
+			"sources": [
+				"https://www.isc.org/download/"
+			],
 			"location": "/__w/charts/charts/charts/bind9",
 			"icon_url": "https://gitlab.isc.org/uploads/-/system/project/avatar/1/Bind_9_Mark_ISC_Blue.png"
 		}
