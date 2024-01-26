@@ -1,9 +1,9 @@
 shareProcessNamespace: true
 
 image:
-  repository: tccr.io/truecharts/syslog-ng
+  repository: quay.io/truecharts/syslog-ng
   pullPolicy: IfNotPresent
-  tag: v3.30.1
+  tag: 8.1.9
 
 logrotateImage:
   repository: docker.io/blacklabelops/logrotate

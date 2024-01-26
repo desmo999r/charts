@@ -32,6 +32,39 @@
 			],
 			"location": "/__w/charts/charts/charts/bind9",
 			"icon_url": "https://gitlab.isc.org/uploads/-/system/project/avatar/1/Bind_9_Mark_ISC_Blue.png"
+		},
+		"syslog-ng": {
+			"app_readme": "<h1>Syslog-ng</h1>",
+			"categories": [
+				"incubator"
+			],
+			"description": "Syslog-ng server",
+			"name": "syslog-ng",
+			"title": "syslog-ng",
+			"healthy": true,
+			"healthy_error": null,
+			"home": "https://www.syslog-ng.com",
+			"latest_version": "2401.0.1",
+			"latest_app_version": "v1",
+			"latest_human_version": "v1_2401.0.1",
+			"last_update": "2024-01-26 11:27:00",
+			"recommended": false,
+			"maintainers": [
+				{
+					"name": "Jim",
+					"email": "jandre@desmojim.fr"
+				}
+			],
+			"tags": [
+				"logs",
+				"network"
+			],
+			"screenshots": [],
+			"sources": [
+				"https://www.syslog-ng.com/products/open-source-log-management/"
+			],
+			"location": "/__w/charts/charts/charts/syslog-ng",
+			"icon_url": "https://truecharts.org/_static/img/appicons/syslog-ng-icon.png"
 		}
 	}
 }
