@@ -8,6 +8,9 @@
 			"description": "Bind 9 name server",
 			"name": "Bind9",
 			"healthy": true,
+			"latest_version": "2401.0.1",
+			"latest_app_version": "v1",
+			"latest_human_version": "v1_2401.0.1",
 			"location": "/__w/charts/charts/charts/bind9",
 			"icon_url": "https://gitlab.isc.org/uploads/-/system/project/avatar/1/Bind_9_Mark_ISC_Blue.png"
 		}
