@@ -1,5 +1,8 @@
 shareProcessNamespace: true
 
+logrotate:
+  enabled: true
+
 image:
   repository: quay.io/truecharts/syslog-ng
   pullPolicy: IfNotPresent
