@@ -29,6 +29,64 @@
 				"description": " Configure storage for Bind9"
 			}
 		],
+		"app_metadata": {
+			"runAsContext": [
+				{
+					"userName": "root",
+					"groupName": "root",
+					"gid": 0,
+					"uid": 0,
+					"description": "Bind9 runs as root user."
+				}
+			],
+			"capabilities": [
+				{
+					"name": "CHOWN",
+					"description": "Bind9 is able to chown files."
+				},
+				{
+					"name": "FOWNER",
+					"description": "Bind9 is able to bypass permission checks for it's sub-processes."
+				},
+				{
+					"name": "DAC_OVERRIDE",
+					"description": "Bind9 is able to bypass permission checks."
+				},
+				{
+					"name": "SETGID",
+					"description": "Bind9 is able to set group ID for it's sub-processes."
+				},
+				{
+					"name": "SETUID",
+					"description": "Bind9 is able to set user ID for it's sub-processes."
+				},
+				{
+					"name": "SETFCAP",
+					"description": "Bind9 is able to set file capabilities."
+				},
+				{
+					"name": "SETPCAP",
+					"description": "Bind9 is able to set process capabilities."
+				},
+				{
+					"name": "NET_ADMIN",
+					"description": "Bind9 is able to perform various network-related operations."
+				},
+				{
+					"name": "NET_BIND_SERVICE",
+					"description": "Bind9 is able to bind to a privileged port."
+				},
+				{
+					"name": "NET_RAW",
+					"description": "Bind9 is able to use raw sockets."
+				},
+				{
+					"name": "KILL",
+					"description": "Bind9 is able to kill processes."
+				}
+			],
+			"hostMounts": []
+		},
 		"schema": {
 			"questions": [
 				{
