@@ -35,5 +35,18 @@ persistence:
   config:
     enabled: true
     mountPath: "/etc/bind"
-  varrun:
+  varlogs:
     enabled: true
+    mountPath: "/var/log"
+  shared:
+    enabled: false
+  lib:
+    enabled: true
+    mountPath: "/var/lib/bind"
+    type: emptyDir
+    medium: Memory
+  cache:
+    enabled: true
+    mountPath: "/var/cache/bind"
+    type: emptyDir
+    medium: Memory
