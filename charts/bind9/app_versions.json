@@ -146,7 +146,7 @@
 														"hostPath"
 													]
 												],
-												"type": "hostPath"
+												"type": "hostpath"
 											}
 										}
 									]
