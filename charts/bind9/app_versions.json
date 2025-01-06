@@ -118,6 +118,36 @@
 													}
 												]
 											}
+										},
+										{
+											"variable": "setPermissions",
+											"label": "Automatically set permissions on install",
+											"schema": {
+												"show_if": [
+													[
+														"type",
+														"=",
+														"hostPath"
+													]
+												],
+												"type": "boolean",
+												"default": true
+											}
+										},
+										{
+											"variable": "hostPath",
+											"label": "hostPath",
+											"description": "Path inside the container the storage is mounted",
+											"schema": {
+												"show_if": [
+													[
+														"type",
+														"=",
+														"hostPath"
+													]
+												],
+												"type": "hostPath"
+											}
 										}
 									]
 								}
