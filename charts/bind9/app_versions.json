@@ -1,0 +1,72 @@
+{
+	"0.0.4": {
+		"healthy": true,
+		"supported": false,
+		"healthy_error": null,
+		"version": "0.0.4",
+		"location": "/__w/charts/charts/charts/bind9/0.0.4",
+		"human_version": "9.18_0.0.4",
+		"last_update": "2025-01-06 11:27:00",
+		"chart_metadata": {
+			"name": "bind9",
+			"type": "application",
+			"version": "0.0.4",
+			"maintainers": [
+				{
+					"name": "Jim",
+					"email": "jandre@desmojim.fr"
+				}
+			],
+			"sources": [
+				"https://www.isc.org/download/"
+			],
+			"icon": "https://gitlab.isc.org/uploads/-/system/project/avatar/1/Bind_9_Mark_ISC_Blue.png"
+		},
+		"groups": [
+			{
+				"name": "Storage",
+				"description": " Configure storage for Bind9"
+			}
+		],
+		"schema": {
+			"questions": [
+				{
+					"variable": "persistence",
+					"group": "Storage",
+					"schema": {
+						"type": "dict",
+						"attrs": [
+							{
+								"variable": "config",
+								"label": "Configuration Volume",
+								"schema": {
+									"type": "dict",
+									"attrs": [
+										{
+											"variable": "type",
+											"label": "Type of Storage",
+											"schema": {
+												"type": "string",
+												"default": "simplePVC",
+												"enum": [
+													{
+														"value": "simplePVC",
+														"description": "PVC (simple)"
+													},
+													{
+														"value": "hostPath",
+														"description": "hostPath"
+													}
+												]
+											}
+										}
+									]
+								}
+							}
+						]
+					}
+				}
+			]
+		}
+	}
+}
