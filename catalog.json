@@ -44,10 +44,10 @@
 			"healthy": true,
 			"healthy_error": null,
 			"home": "https://www.syslog-ng.com",
-			"latest_version": "2401.0.1",
+			"latest_version": "0.0.18",
 			"latest_app_version": "v1",
-			"latest_human_version": "v1_2401.0.1",
-			"last_update": "2024-01-26 11:27:00",
+			"latest_human_version": "v1_0.0.18",
+			"last_update": "2025-01-06 11:27:00",
 			"recommended": false,
 			"maintainers": [
 				{
