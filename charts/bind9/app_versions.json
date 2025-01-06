@@ -23,12 +23,6 @@
 			],
 			"icon": "https://gitlab.isc.org/uploads/-/system/project/avatar/1/Bind_9_Mark_ISC_Blue.png"
 		},
-		"groups": [
-			{
-				"name": "Storage",
-				"description": " Configure storage for Bind9"
-			}
-		],
 		"app_metadata": {
 			"runAsContext": [
 				{
@@ -88,6 +82,12 @@
 			"hostMounts": []
 		},
 		"schema": {
+			"groups": [
+				{
+					"name": "Storage",
+					"description": " Configure storage for Bind9"
+				}
+			],
 			"questions": [
 				{
 					"variable": "persistence",
