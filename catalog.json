@@ -6,7 +6,7 @@
 				"incubator"
 			],
 			"description": "Bind 9 name server",
-			"name": "Bind9",
+			"name": "bind9",
 			"healthy": true,
 			"healthy_error": null,
 			"home": "https://www.isc.org",
