@@ -1,20 +1,84 @@
 {
-	"2401.0.1": {
+	"0.0.18": {
 		"healthy": true,
-		"healthy_error": null,
-		"version": "2401.0.1",
 		"supported": true,
-		"location": "/__w/charts/charts/charts/syslog-ng/2401.0.1",
-		"last_update": "2024-01-26 15:27:00",
+		"healthy_error": null,
+		"version": "0.0.18",
+		"location": "/__w/charts/charts/charts/syslog-ng/0.0.18",
+		"human_version": "v1_0.0.18",
+		"last_update": "2025-04-11 15:27:00",
 		"required_features": [],
-		"human_version": "v1_2401.0.1",
-		"version": "2401.0.1",
 		"chart_metadata": {
-			"name": "syslog-ng"
+			"name": "syslog-ng",
+			"type": "application",
+			"version": "0.0.18",
+			"maintainers": [
+				{
+					"name": "Jim",
+					"email": "jandre@desmojim.fr"
+				}
+			],
+			"sources": [
+				"https://www.syslog-ng.com/products/open-source-log-management/"
+			],
+			"icon": "https://phelepjeremy.wordpress.com/wp-content/uploads/2017/06/syslog-ng-logo.png"
 		},
 		"app_metadata": {
-			"runAsContext": [],
-			"capabilities": [],
+			"runAsContext": [
+				{
+					"userName": "root",
+					"groupName": "root",
+					"gid": 0,
+					"uid": 0,
+					"description": "Bind9 runs as root user."
+				}
+			],
+			"capabilities": [
+				{
+					"name": "CHOWN",
+					"description": "Syslog-ng is able to chown files."
+				},
+				{
+					"name": "FOWNER",
+					"description": "Syslog-ng is able to bypass permission checks for it's sub-processes."
+				},
+				{
+					"name": "DAC_OVERRIDE",
+					"description": "Syslog-ng is able to bypass permission checks."
+				},
+				{
+					"name": "SETGID",
+					"description": "Syslog-ng is able to set group ID for it's sub-processes."
+				},
+				{
+					"name": "SETUID",
+					"description": "Syslog-ng is able to set user ID for it's sub-processes."
+				},
+				{
+					"name": "SETFCAP",
+					"description": "Syslog-ng is able to set file capabilities."
+				},
+				{
+					"name": "SETPCAP",
+					"description": "Syslog-ng is able to set process capabilities."
+				},
+				{
+					"name": "NET_ADMIN",
+					"description": "Syslog-ng is able to perform various network-related operations."
+				},
+				{
+					"name": "NET_BIND_SERVICE",
+					"description": "Syslog-ng is able to bind to a privileged port."
+				},
+				{
+					"name": "NET_RAW",
+					"description": "Syslog-ng is able to use raw sockets."
+				},
+				{
+					"name": "KILL",
+					"description": "Syslog-ng is able to kill processes."
+				}
+			],
 			"hostMounts": []
 		},
 		"schema": {
